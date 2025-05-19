@@ -1,12 +1,3 @@
-#
-#    ______          __     ____                 __  ______ 
-#   / ____/___  ____/ /__  / __ \____  _____    / / / / __ \
-#  / /   / __ \/ __  / _ \/ / / / __ \/ ___/   / /_/ / / / /
-# / /___/ /_/ / /_/ /  __/ /_/ / /_/ (__  )   / __  / /_/ / 
-# \____/\____/\__,_/\___/\____/ .___/____/   /_/ /_/\___\_\ 
-#                            /_/
-#
-#
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -75,6 +66,7 @@ setopt promptsubst         # enable command substitution in prompt
 #######################################################
 # export EDITOR=nvim
 # export VISUAL=nvim
+export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim visudo
 export VISUAL=nvim visudo
 export SUDO_EDITOR=nvim
