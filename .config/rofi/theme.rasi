@@ -25,8 +25,8 @@ window {
     border-color:                @border-color;
     border-radius:               0px;  /* Removed rounded corners */
     padding:                     15px;
-    width:                       40%;
-    height:                      50%;
+    width:                       30%;  /* Changed from 40% to 30% to make it smaller */
+    height:                      40%;
 }
 
 mainbox {
