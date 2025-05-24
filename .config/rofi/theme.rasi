@@ -1,0 +1,122 @@
+* {
+    /* Colors from your Sway theme */
+    base:      #1e1e2eCC;  /* Added transparency with CC (80%) */
+    mantle:    #181825DD;  /* Added transparency with DD (87%) */
+    text:      #cdd6f4;
+    peach:     #fab387;
+    overlay0:  #6c7086;
+    blue:      #8aadf4;    /* Added blue color from waybar/colors.css */
+    
+    background:                  @base;
+    background-alt:              @mantle;
+    foreground:                  @text;
+    selected:                    @peach;
+    active:                      #a6e3a1;
+    urgent:                      @peach;
+    
+    border-color:                @blue;  /* Changed from overlay0 to blue to match Sway active window */
+    separatorcolor:              @border-color;
+    background-color:            transparent;
+}
+
+window {
+    background-color:            @background;
+    border:                      2px;
+    border-color:                @border-color;
+    border-radius:               0px;  /* Removed rounded corners */
+    padding:                     15px;
+    width:                       40%;
+    height:                      50%;
+}
+
+mainbox {
+    border:                      0;
+    padding:                     0;
+    background-color:            transparent;
+}
+
+message {
+    border:                      2px solid 0px 0px;
+    border-color:                @separatorcolor;
+    padding:                     10px;
+    background-color:            @background-alt;
+}
+
+textbox {
+    text-color:                  @foreground;
+    background-color:            transparent;
+}
+
+listview {
+    fixed-height:                0;
+    border:                      0;
+    spacing:                     5px;
+    scrollbar:                   false;  /* Changed from true to false to hide scrollbar */
+    padding:                     10px 0px 0px;
+    background-color:            transparent;
+}
+
+element {
+    border:                      0;
+    padding:                     8px;
+    border-radius:               0px;  /* Removed rounded corners */
+}
+
+element normal.normal {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @background-alt;
+    text-color:                  @selected;
+}
+
+element alternate.normal {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+scrollbar {
+    width:                       4px;
+    border:                      0;
+    handle-color:                @border-color;
+    handle-width:                8px;
+    padding:                     0;
+}
+
+inputbar {
+    spacing:                     0;
+    text-color:                  @foreground;
+    padding:                     1px;
+    children:                    [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:                     0;
+    text-color:                  @foreground;
+}
+
+textbox-prompt-colon {
+    expand:                      false;
+    str:                         ":";
+    margin:                      0px 0.3em 0em 0em;
+    text-color:                  inherit;
+}
+
+element-icon {
+    size:                        1.0em;
+    margin:                      0 10px 0 0;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}

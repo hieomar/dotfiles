@@ -1,0 +1,11 @@
+configuration {
+    display-application: "Applications: ";
+    display-window: "Windows: ";
+    drun-display-formart: "{icon} {name}";
+    font: "JetBrainsMono Nerd Font Medium 12";
+    show-icons: true;
+    icon-theme: "Adwaita";
+    terminal: "kitty";
+    modi: ["window", "drun"];
+}
+@theme "~/.config/rofi/theme.rasi"
