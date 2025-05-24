@@ -2,6 +2,7 @@ configuration {
     display-drun: "Applications ";
     display-window: "Windows ";
     drun-display-formart: "{icon} {name}";
+    window-display-formart: "{icon} {name}";
     font: "JetBrainsMono Nerd Font Medium 12";
     show-icons: true;
     icon-theme: "Adwaita";
