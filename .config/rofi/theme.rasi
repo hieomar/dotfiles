@@ -6,6 +6,7 @@
     peach:     #fab387;
     overlay0:  #6c7086;
     blue:      #8aadf4;    /* Added blue color from waybar/colors.css */
+    blue-alt:#54688f;  
     
     background:                  @base;
     background-alt:              @mantle;
@@ -21,7 +22,7 @@
 
 window {
     background-color:            @background;
-    border:                      2px;
+    border:                      1px;
     border-color:                @border-color;
     border-radius:               0px;  /* Removed rounded corners */
     padding:                     15px;
@@ -68,7 +69,7 @@ element normal.normal {
 }
 
 element selected.normal {
-    background-color:            @background-alt;
+    background-color:            @blue-alt;
     text-color:                  @selected;
 }
 
