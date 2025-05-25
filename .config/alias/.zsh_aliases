@@ -1,3 +1,14 @@
+# If powerprofilectl is installed, set up aliases for power management
+if [[ -x "$(command -v powerprofilesctl)" ]]; then
+	alias pws='powerprofile set power-saver'
+	alias pwb='powerprofile set balanced'
+	alias pwp='powerprofile get performance'
+else
+	# If powerprofilectl is not installed, set up aliases for power management
+	alias pws='echo "Power profiles are not available on this system."'
+	alias pwb='echo "Power profiles are not available on this system."'
+	alias pwp='echo "Power profiles are not available on this system."'
+fi
 
 #######################################################
 # Set the default editor
