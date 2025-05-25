@@ -3,13 +3,24 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", monospace;
+    font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 13px;
     min-height: 0;
+    transition: all 0.3s ease;
 }
 
 window#waybar {
-    background: @mantle;
+    background: alpha(@mantle, 0.95);
+    color: @text;
+    border-bottom: 2px solid alpha(@surface0, 0.8);
+}
+
+tooltip {
+    background: @base;
+    border: 1px solid @surface0;
+}
+
+tooltip label {
     color: @text;
 }
 
@@ -17,44 +28,109 @@ window#waybar {
     background: transparent;
     color: @subtext0;
     padding: 0 8px;
+    margin: 4px 0;
+}
+
+#workspaces button:hover {
+    background: alpha(@surface0, 0.5);
+    box-shadow: inherit;
 }
 
 #workspaces button.focused {
     background: @surface0;
     color: @blue;
+    border-bottom: 2px solid @blue;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @crust;
 }
 
 #mode {
     background: @peach;
     color: @crust;
     padding: 0 10px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+#window {
+    color: @text;
+    margin: 0 4px;
 }
 
 #clock {
-    background: @surface1;
+    background: alpha(@surface1, 0.7);
     color: @text;
     padding: 0 12px;
+    margin: 4px;
+    border-radius: 6px;
 }
 
 #pulseaudio,
 #network,
+#cpu,
+#memory,
+#temperature,
 #battery,
 #tray {
-    background: @surface2;
+    background: alpha(@surface2, 0.7);
     color: @text;
-    margin-left: 4px;
+    margin: 4px 2px;
     padding: 0 10px;
+    border-radius: 6px;
 }
 
-#battery.charging {
-    color: @green;
+#pulseaudio {
+    color: @mauve;
 }
 
-#battery.critical {
+#network {
+    color: @sapphire;
+}
+
+#cpu {
+    color: @teal;
+}
+
+#memory {
+    color: @lavender;
+}
+
+#temperature {
+    color: @yellow;
+}
+
+#temperature.critical {
     color: @red;
 }
 
+#battery {
+    color: @green;
+}
+
+#battery.charging {
+    color: @teal;
+}
+
+#battery.warning:not(.charging) {
+    color: @peach;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: blink 0.5s ease-in-out infinite alternate;
+}
+
 #tray {
-    background: @surface0;
+    background: alpha(@surface0, 0.7);
     padding: 0 8px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @red;
+        color: @crust;
+    }
 }

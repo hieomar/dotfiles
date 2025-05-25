@@ -3,7 +3,8 @@
     "position": "top",
     "modules-left": [
         "sway/workspaces",
-        "sway/mode"
+        "sway/mode",
+        "sway/window"
     ],
     "modules-center": [
         "clock"
@@ -15,24 +16,87 @@
         "tray"
     ],
     "sway/workspaces": {
-        "disable-scroll": false
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "urgent": "",
+            "focused": "$",
+            "visible": "",
+            "empty": "",
+            "default": ""
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "max-length": 50
     },
     "clock": {
         "format": "{:%a %d %b %H:%M:%S}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-muted": "",
-        "on-click": "pavucontrol"
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        "on-scroll-left": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
     "network": {
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": " {ifname}",
-        "format-disconnected": ""
+        "format-wifi": " ({signalStrength}%)",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected"
     },
     "battery": {
+        "states": {
+            "good": 95,
+            "warning": 40,
+            "critical": 20
+        },
         "format": "{capacity}% {icon}",
-        "format-charging": " {capacity}%"
+        "format-charging": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-alt-charging": " {time}",
+        "format-icons": {
+            "good": "",
+            "warning": "",
+            "critical": "",
+            "charging": ""
+        },
+        "format-charging-icons": {
+            "good": "",
+            "warning": "",
+            "critical": ""
+        }
+    },
+    "tray": {
+        "spacing": "10",
+        "icon-size": 16,
+        "max-length": 20,
+        "tooltip": true,
+        "format-icons": {
+            "default": ""
+        }
     }
 }
