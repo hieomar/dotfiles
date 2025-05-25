@@ -1,0 +1,124 @@
+* {
+    /* Colors from your existing theme */
+    base:      #1e1e2eCC;  /* Base with 80% transparency */
+    mantle:    #181825DD;  /* Mantle with 87% transparency */
+    text:      #cdd6f4;
+    peach:     #fab387;
+    overlay0:  #6c7086;
+    blue:      #8aadf4;
+    blue-alt:  #54688f;
+    red:       #f38ba8;
+    green:     #a6e3a1;
+    
+    background:         @base;
+    background-alt:     @mantle;
+    foreground:         @text;
+    selected:           @peach;
+    active:             @green;
+    urgent:             @red;
+    
+    border-color:       @blue;
+    separatorcolor:     @border-color;
+    background-color:   transparent;
+}
+
+window {
+    background-color:   @background;
+    border:             1px;
+    border-color:       @border-color;
+    border-radius:      0px;
+    padding:            15px;
+    width:              40%;
+    location:           center;
+    anchor:             center;
+    x-offset:           0;
+    y-offset:           0;
+}
+
+mainbox {
+    border:             0;
+    padding:            0;
+    background-color:   transparent;
+}
+
+message {
+    border:             2px solid 0px 0px;
+    border-color:       @separatorcolor;
+    padding:            10px;
+    background-color:   @background-alt;
+}
+
+textbox {
+    text-color:         @foreground;
+    background-color:   transparent;
+}
+
+listview {
+    fixed-height:       false;
+    border:             0;
+    spacing:            5px;
+    scrollbar:          false;
+    padding:            10px 0px 0px;
+    background-color:   transparent;
+    lines:              5;
+}
+
+element {
+    border:             0;
+    padding:            12px;
+    border-radius:      0px;
+}
+
+element normal.normal {
+    background-color:   @background;
+    text-color:         @foreground;
+}
+
+element selected.normal {
+    background-color:   @blue-alt;
+    text-color:         @selected;
+}
+
+element alternate.normal {
+    background-color:   @background;
+    text-color:         @foreground;
+}
+
+inputbar {
+    spacing:            0;
+    text-color:         @foreground;
+    padding:            1px;
+    children:           [ prompt, textbox-prompt-colon, entry ];
+}
+
+prompt {
+    spacing:            0;
+    text-color:         @blue;
+}
+
+textbox-prompt-colon {
+    expand:             false;
+    str:                ":";
+    margin:             0px 0.3em 0em 0em;
+    text-color:         @blue;
+}
+
+entry {
+    spacing:            0;
+    text-color:         @foreground;
+}
+
+/* Element Icon settings - hidden for power menu */
+element-icon {
+    size:               0;
+    border:             0px;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    highlight:          inherit;
+    cursor:             inherit;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+}
