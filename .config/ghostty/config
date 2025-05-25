@@ -1,0 +1,7 @@
+# theme = catppuccin-mocha
+font-family = Jetbrains Nerd Font
+font-size = 10
+adjust-cursor-height=1
+adjust-cursor-thickness=3
+background-opacity = 0.98
+gtk-titlebar = false
