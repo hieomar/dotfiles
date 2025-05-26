@@ -20,7 +20,7 @@ return {
     require("neo-tree").setup(opts)
 
     -- Optionally, you can set up keybindings for Neo-tree
-    vim.keymap.set("n", "<C-e>", ":Neotree toggle right<cr>", { desc = "Toggle Neo-tree" })
+    vim.keymap.set("n", "<C-e>", ":Neotree filesystem reveal left<cr>", { desc = "Show Neo-tree" })
   end,
 }
 }
