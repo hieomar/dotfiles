@@ -18,13 +18,6 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
-local pluggins = {
-  -- colorscheme that will be used when installing plugins.
-   install = { colorscheme = { "onedark_pro" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
-}
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
@@ -37,6 +30,4 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
-require("onedarkpro").setup()
-vim.cmd("colorscheme onedark_dark")
 
