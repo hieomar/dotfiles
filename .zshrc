@@ -359,3 +359,5 @@ source <(fzf --zsh)
 # Tmuxifier config for zsh plugins  
 # eval "$(tmuxifier init -)"
 
+export PATH="/home/hieomar/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/hieomar/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
