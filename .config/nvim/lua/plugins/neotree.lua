@@ -12,6 +12,15 @@ return {
 		---@type neotree.Config?
 		opts = {
 			-- fill any relevant options here
+			filesystem = {
+				filtered_items = {
+					visible = false, -- hide filtered items on open
+					hide_gitignored = false,
+					hide_dotfiles = false,
+					hide_by_name = {},
+					never_show = { ".git" },
+				},
+			},
 		},
 		config = function(_, opts)
 			-- This is where you configure Neo-tree
